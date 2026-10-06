@@ -1,0 +1,67 @@
+{
+  "schema": "web-session-dast-review-source-manifest-v1",
+  "version": "0.1.0",
+  "author": "dhtfish98",
+  "captured_at_utc": "2026-10-06T05:34:35.815586+00:00",
+  "scope": "Self-owned Python, tests, workflow and packaging config; third-party reference guidance and build tools retain their rights",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 75,
+      "sha256": "5136ac3df93b29d1770d88c3ca67b2b24b80a3c88543e93fde3ad1d6d9549b49"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 1164,
+      "sha256": "999bb226655e0a3a3e5b8132cad7742e17dcb2166eb4352e33089545e76d1f74"
+    },
+    {
+      "path": "MANIFEST.in",
+      "bytes": 390,
+      "sha256": "df9f0d7d56860f0356534b215449964fdb66afae29f5bff5a42e236576e81161"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 933,
+      "sha256": "8d265b19466218422573afdd00a6db7b8f2c9baff679e42e177b7985e1685286"
+    },
+    {
+      "path": "scripts/validate.py",
+      "bytes": 14224,
+      "sha256": "5036f5f2c3aa124174bf2d526baa569d39d8980bf7165926cc65219458bd118e"
+    },
+    {
+      "path": "src/web_session_dast_review/__init__.py",
+      "bytes": 189,
+      "sha256": "9a4cd22d0dfffdc46b6ef4305add8b81b61533c9eed5f95cee07867d5a4bda0d"
+    },
+    {
+      "path": "src/web_session_dast_review/experiment.py",
+      "bytes": 8421,
+      "sha256": "2cec7bf8b6eb05952d15fb7f9597663cdf0ab9327d3cf7f5f180c1b46bf41a9f"
+    },
+    {
+      "path": "src/web_session_dast_review/http_probe.py",
+      "bytes": 2467,
+      "sha256": "1feed9824bd8497557f03d62e2412b97fb55d71f8ece1ad1c1ebc3f399110f34"
+    },
+    {
+      "path": "src/web_session_dast_review/server.py",
+      "bytes": 8959,
+      "sha256": "e5e4e5d8c950e7e5a3bdf41608b298ff8773f9b2e3784d6e6e7c9de61148be40"
+    },
+    {
+      "path": "tests/test_session_matrix.py",
+      "bytes": 6802,
+      "sha256": "712a87b2857b166466931779a11b3f5f218d611bd1aa8dd4f4825fff77284db8"
+    },
+    {
+      "path": "tests/test_validator_safety.py",
+      "bytes": 2655,
+      "sha256": "7a5f43c9b9f07df15189796f70871553c8cea5cacb7d73a3f7e668189b16c059"
+    }
+  ],
+  "publication_evidence_boundary": "Verify current public main, tag, formal Release, assets and CI at the same commit; this manifest itself does not prove publication",
+  "cvp_qualification": "OPEN",
+  "upstream_vulnerability_claim": false
+}

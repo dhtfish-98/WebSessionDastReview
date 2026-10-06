@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "web-session-dast-review"
+version = "0.1.0"
+description = "Loopback-only HTTP matrix for session rotation, logout invalidation and two-account authorization"
+readme = {file = "项目文档/README.md", content-type = "text/markdown"}
+requires-python = ">=3.11"
+authors = [{name = "dhtfish98"}]
+maintainers = [{name = "dhtfish98"}]
+license = "MIT"
+license-files = ["项目文档/LICENSE"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Security",
+]
+
+[project.scripts]
+web-session-matrix = "web_session_dast_review.experiment:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = false
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,35 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  source-and-package:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.14']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Source, package, and loopback HTTP verification
+        env:
+          SESSION_BUILD_ROOT: ${{ runner.temp }}/Build/验证
+        run: python3 scripts/validate.py --build-root "$SESSION_BUILD_ROOT" --run-id ci-${{ matrix.python-version }}
+      - name: Upload verification receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-session-receipt-py${{ matrix.python-version }}
+          path: |
+            ${{ runner.temp }}/Build/验证/ci-${{ matrix.python-version }}/validation.json
+            ${{ runner.temp }}/Build/验证/ci-${{ matrix.python-version }}/*-matrix.json
+            ${{ runner.temp }}/Build/验证/ci-${{ matrix.python-version }}/logs/*.log
+          if-no-files-found: error
